@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAYMENT RASYAXD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(247, 147, 30, 0.3);
+        }
+        
+        header p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .payment-card {
+            background: linear-gradient(145deg, #1a1a1a, #222);
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(247, 147, 30, 0.2);
+        }
+        
+        .payment-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #f7931e;
+            font-size: 1.3rem;
+        }
+        
+        .payment-card i {
+            font-size: 1.5rem;
+        }
+        
+        .payment-info {
+            background: #111;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+            word-break: break-all;
+        }
+        
+        .payment-info p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .qris-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .qris-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 2px solid #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(247, 147, 30, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(247, 147, 30, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .channel-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        
+        .channel-section h2 {
+            margin-bottom: 20px;
+            color: #f7931e;
+            font-size: 1.8rem;
+        }
+        
+        .channel-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
+        }
+        
+        .channel-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(18, 140, 126, 0.4);
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            background: #151515;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f7931e;
+        }
+        
+        .instructions h3 {
+            color: #f7931e;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .payment-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .payment-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-money-bill-wave"></i> Payment Gateway</h1>
+            <p>Lakukan pembayaran dengan metode di bawah ini</p>
+        </header>
+        
+        <div class="payment-options">
+            <div class="payment-card">
+                <h3><i class="fas fa-mobile-alt"></i> DANA</h3>
+                <div class="payment-info">
+                    <p>082285929576</p>
+                </div>
+                <p>Transfer sesuai dengan nominal pembayaran Anda ke nomor DANA di atas</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn" onclick="copyToClipboard('082285929576')">
+                        <i class="fas fa-copy"></i> Salin Nomor
+                    </button>
+                </div>
+            </div>
+            
+            <div class="payment-card">
+                <h3><i class="fas fa-qrcode"></i> QRIS</h3>
+                <div class="qris-container">
+                    <img src="https://files.catbox.moe/e4qpsa.jpeg" alt="QRIS Code">
+                </div>
+                <p>Scan QR code di atas untuk melakukan pembayaran</p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> Instruksi Pembayaran</h3>
+            <ol>
+                <li>Pilih metode pembayaran yang diinginkan (DANA atau QRIS)</li>
+                <li>Untuk DANA: Transfer ke nomor yang tertera sesuai nominal</li>
+                <li>Untuk QRIS: Scan QR code menggunakan aplikasi bank atau e-wallet Anda</li>
+                <li>Setelah pembayaran berhasil, simpan bukti transaksi</li>
+                <li>Konfirmasi pembayaran Anda melalui saluran WhatsApp di bawah</li>
+            </ol>
+        </div>
+        
+        <div class="channel-section">
+            <h2><i class="fab fa-whatsapp"></i> Saluran WhatsApp</h2>
+            <p>Bergabung dengan saluran WhatsApp kami untuk informasi terbaru dan konfirmasi pembayaran</p>
+            <div style="margin-top: 20px;">
+                <a href="https://whatsapp.com/channel/0029Vb8Ahsm2phHR7AkyIx2O" target="_blank" class="channel-btn">
+                    <i class="fab fa-whatsapp"></i> Join Saluran WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Payment Gateway. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Nomor DANA berhasil disalin: ' + text);
+            }, function() {
+                alert('Gagal menyalin nomor, silakan salin manual: ' + text);
+            });
+        }
+    </script>
+</body>
+</html>
